@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using TrainingSQL.Models;
+using TrainingSQL.Services;
+using TrainingSQL.Business;
 
 namespace TrainingSQL.Controllers
 {
@@ -22,14 +24,14 @@ namespace TrainingSQL.Controllers
         {
             return db.Countries;
         }
-
+        /*
         [HttpGet]
         [Route("api/Countries/{code}")]
         public Country GetCountry(string code)
         {
             var element = db.Countries.Where(e => e.Code.Equals(code)).FirstOrDefault();
             return element;
-        }
+        }*/
 
         [HttpGet]
         [Route("api/Countries/Count")]
@@ -38,6 +40,15 @@ namespace TrainingSQL.Controllers
             return db.Countries.Count();
         }
         
+        [HttpGet]
+        [Route("api/Countries/{code}")]
+        public Country GetCountry(string code)
+        {
+            SqlServerService sqlServer = new SqlServerService();
+            CountriesBusiness business = new CountriesBusiness();
+
+            return business.GetCountry(code, sqlServer.GetSqlConnection());
+        }
 
     }
 }
