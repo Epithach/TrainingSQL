@@ -15,26 +15,8 @@ namespace TrainingSQL.Tools
 
         }
         
-        /*
-        public static Singleton Instance
-        {
-            get
-            {
-                lock (padlock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new Singleton();
-                    }
-                    return instance;
-                }
-            }
-        }
-        */
-
         public static Singleton GetInstance()
         {
-
             lock ((padlock))
             {
                 // Si pas d'instance existante on en crée une...

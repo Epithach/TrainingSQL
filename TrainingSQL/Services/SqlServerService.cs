@@ -8,11 +8,13 @@ using System.Diagnostics;
 
 namespace TrainingSQL.Services
 {
-    public class SqlServerService
+    public sealed class SqlServerService
     {
+        public static SqlServerService Instance = null;
+        private static readonly object Padlock = new object();
         private SqlConnection Connection;
 
-        public SqlServerService()
+        SqlServerService()
         {
             this.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TrainingSQLContext"].ConnectionString);
             try
@@ -32,9 +34,28 @@ namespace TrainingSQL.Services
             this.Connection.Close();
         }
 
+        public static SqlServerService GetInstance()
+        {
+            lock ((Padlock))
+            {
+                if (Instance == null)
+                {
+                    Instance = new SqlServerService();
+                }
+                return Instance;
+            }
+        }
+
         public SqlConnection GetSqlConnection()
         {
-            return this.Connection;
+            lock (Padlock)
+            {
+                if (Instance == null)
+                {
+                    return null;
+                }
+                return this.Connection;
+            }
         }
 
     }

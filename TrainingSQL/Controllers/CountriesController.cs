@@ -24,14 +24,6 @@ namespace TrainingSQL.Controllers
         {
             return db.Countries;
         }
-        /*
-        [HttpGet]
-        [Route("api/Countries/{code}")]
-        public Country GetCountry(string code)
-        {
-            var element = db.Countries.Where(e => e.Code.Equals(code)).FirstOrDefault();
-            return element;
-        }*/
 
         [HttpGet]
         [Route("api/Countries/Count")]
@@ -44,10 +36,20 @@ namespace TrainingSQL.Controllers
         [Route("api/Countries/{code}")]
         public Country GetCountry(string code)
         {
-            SqlServerService sqlServer = new SqlServerService();
+            SqlServerService sqlServer = SqlServerService.GetInstance();
             CountriesBusiness business = new CountriesBusiness();
 
             return business.GetCountry(code, sqlServer.GetSqlConnection());
+        }
+
+        [HttpGet]
+        [Route("api/Countries/GetLanguagePercentile/{code}")]
+        public List<LanguagePercent> GetLanguagePercertile(string code)
+        {
+            SqlServerService sqlServer = SqlServerService.GetInstance();
+            CountriesBusiness business = new CountriesBusiness();
+
+            return business.GetLanguagePercentList(code, sqlServer.GetSqlConnection());
         }
 
     }
