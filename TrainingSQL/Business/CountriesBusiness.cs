@@ -11,13 +11,13 @@ namespace TrainingSQL.Business
 {
     public class CountriesBusiness
     {
-        public Country GetCountry(string code, SqlConnection conn)
+        public Country GetCountry(string code)
         {
             CountriesDatasource datasource = CountriesDatasource.GetInstance();
             return datasource.GetCountry(code);
         }
 
-        public List<LanguagePercent> GetLanguagePercentList(string code, SqlConnection conn)
+        public List<LanguagePercent> GetLanguagePercentList(string code)
         {
             CountriesDatasource datasource = CountriesDatasource.GetInstance();
             return datasource.GetLanguagePercent(code);

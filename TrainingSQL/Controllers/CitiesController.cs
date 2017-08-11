@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using TrainingSQL.Models;
+using TrainingSQL.Business;
 
 namespace TrainingSQL.Controllers
 {
@@ -132,5 +129,19 @@ namespace TrainingSQL.Controllers
             var res = db.Cities.Where(e => e.CountryCode.Equals(code));
             return res;
         }
+
+
+        #region Without entity framework
+
+        [HttpGet]
+        [Route("api/Cities/GetPopulationIndicator")]
+        public CityPopulationIndicator GetPopulationIndicator()
+        {
+            CitiesBusiness business = new CitiesBusiness();
+            return business.GetPopulationIndicator();
+        }
+
+        #endregion
+
     }
 }

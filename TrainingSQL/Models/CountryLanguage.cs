@@ -14,6 +14,6 @@ namespace TrainingSQL.Models
 
         public int isOfficial { get; set; }
 
-        public int Percentage { get; set; }
+        public decimal Percentage { get; set; }
     }
 }

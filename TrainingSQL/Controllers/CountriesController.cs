@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Description;
-using TrainingSQL.Models;
-using TrainingSQL.Services;
 using TrainingSQL.Business;
+using TrainingSQL.Models;
 
 namespace TrainingSQL.Controllers
 {
@@ -36,20 +27,16 @@ namespace TrainingSQL.Controllers
         [Route("api/Countries/{code}")]
         public Country GetCountry(string code)
         {
-            SqlServerService sqlServer = SqlServerService.GetInstance();
             CountriesBusiness business = new CountriesBusiness();
-
-            return business.GetCountry(code, sqlServer.GetSqlConnection());
+            return business.GetCountry(code);
         }
 
         [HttpGet]
         [Route("api/Countries/GetLanguagePercentile/{code}")]
         public List<LanguagePercent> GetLanguagePercertile(string code)
         {
-            SqlServerService sqlServer = SqlServerService.GetInstance();
             CountriesBusiness business = new CountriesBusiness();
-
-            return business.GetLanguagePercentList(code, sqlServer.GetSqlConnection());
+            return business.GetLanguagePercentList(code);
         }
 
     }

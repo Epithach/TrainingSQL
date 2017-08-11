@@ -20,11 +20,14 @@ namespace TrainingSQL.Datasource
 
         public static CountriesDatasource GetInstance()
         {
-            if (Instance == null)
+            lock (Padlock)
             {
-                Instance = new CountriesDatasource();
+                if (Instance == null)
+                {
+                    Instance = new CountriesDatasource();
+                }
+                return Instance;
             }
-            return Instance;
         }
 
         public List<LanguagePercent> GetLanguagePercent(string code)
@@ -98,7 +101,5 @@ namespace TrainingSQL.Datasource
                 throw ex;
             }
         }
-
-
     }
 }
