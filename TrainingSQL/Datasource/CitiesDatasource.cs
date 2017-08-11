@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using TrainingSQL.Services;
-using TrainingSQL.Models;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
+using TrainingSQL.Models;
+using TrainingSQL.Services;
 
 namespace TrainingSQL.Datasource
 {
