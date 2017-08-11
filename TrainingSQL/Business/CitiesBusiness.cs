@@ -9,7 +9,7 @@ namespace TrainingSQL.Business
 {
     public class CitiesBusiness
     {
-        public CityPopulationIndicator GetPopulationIndicator()
+        public ValueIndicator GetPopulationIndicator()
         {
             CitiesDatasource datasource = CitiesDatasource.GetInstance();
             return datasource.GetPopulationIndicator();

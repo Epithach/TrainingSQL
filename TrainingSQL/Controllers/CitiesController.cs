@@ -135,7 +135,7 @@ namespace TrainingSQL.Controllers
 
         [HttpGet]
         [Route("api/Cities/GetPopulationIndicator")]
-        public CityPopulationIndicator GetPopulationIndicator()
+        public ValueIndicator GetPopulationIndicator()
         {
             CitiesBusiness business = new CitiesBusiness();
             return business.GetPopulationIndicator();
