@@ -69,3 +69,4 @@ C:\Users\Antoine THACH\Documents\Github\TrainingSQL\TrainingSQL\obj\Debug\Traini
 C:\Users\Antoine THACH\Documents\Github\TrainingSQL\TrainingSQL\bin\TrainingSQL.dll.config
 C:\Users\Antoine THACH\Documents\Github\TrainingSQL\TrainingSQL\bin\TrainingSQL.dll
 C:\Users\Antoine THACH\Documents\Github\TrainingSQL\TrainingSQL\bin\TrainingSQL.pdb
+C:\Users\Antoine THACH\Documents\Github\TrainingSQL\TrainingSQL\obj\Debug\TrainingSQL.csprojResolveAssemblyReference.cache

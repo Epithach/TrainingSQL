@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using TrainingSQL.Models;
 using TrainingSQL.Services;
@@ -46,15 +47,14 @@ namespace TrainingSQL.Datasource
                         Min = (int)response["Min"],
                         Avg = (int)response["Avg"],
                     };
+                    response.Close();
                     return values;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                throw ex;
             }
-
-            return new ValueIndicator();
         }
     }
 }

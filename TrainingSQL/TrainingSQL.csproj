@@ -94,10 +94,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\CitiesBusiness.cs" />
     <Compile Include="Business\CountriesBusiness.cs" />
+    <Compile Include="Business\CountryLanguagesBusiness.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
+    <Compile Include="Controllers\CountryLanguagesController.cs" />
     <Compile Include="Datasource\CitiesDatasource.cs" />
     <Compile Include="Datasource\CountriesDatasource.cs" />
+    <Compile Include="Datasource\CountryLanguagesDatasource.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
