@@ -19,6 +19,16 @@ namespace TrainingSQL
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "CountryLanguagesControl",
+                routeTemplate: "countrylanguages/{action}",
+                defaults: new
+                {
+                    title = RouteParameter.Optional,
+                    controller = "CountryLanguages",
+                }
+            );
         }
     }
 }

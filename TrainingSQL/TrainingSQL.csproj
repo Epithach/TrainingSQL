@@ -105,6 +105,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\OfficialLanguage.cs" />
     <Compile Include="Models\ValueIndicator.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryLanguage.cs" />
