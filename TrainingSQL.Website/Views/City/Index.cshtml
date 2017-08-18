@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>City Index</h2>
+
+<h3>Paralelism Test</h3>
+<input type="button" value="Create" onclick="location.href='@Url.Action("ParallelismTest", "City")'" />
+
+<h3>Number of Country</h3>
+<input type="button" value="Create" onclick="location.href='@Url.Action("CountCity", "City")'" />
+
+@using (Html.BeginForm("GetCityFromCode", "City", FormMethod.Post))
+{
+    <p>Get information about a City by entering a key</p>
+    <input type="text" name="code" />
+    <input type="submit" value="Submit" />
+}

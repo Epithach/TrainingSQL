@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26621.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingSQL", "TrainingSQL\TrainingSQL.csproj", "{D46FC4CF-6C78-42D6-9618-CAC4FE422C89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingSQL.Website", "TrainingSQL.Website\TrainingSQL.Website.csproj", "{C11B0405-EA48-4D9C-8DB0-2E8FE5FC77CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D46FC4CF-6C78-42D6-9618-CAC4FE422C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D46FC4CF-6C78-42D6-9618-CAC4FE422C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D46FC4CF-6C78-42D6-9618-CAC4FE422C89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11B0405-EA48-4D9C-8DB0-2E8FE5FC77CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11B0405-EA48-4D9C-8DB0-2E8FE5FC77CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11B0405-EA48-4D9C-8DB0-2E8FE5FC77CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11B0405-EA48-4D9C-8DB0-2E8FE5FC77CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

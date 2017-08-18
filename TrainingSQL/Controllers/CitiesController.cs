@@ -141,6 +141,13 @@ namespace TrainingSQL.Controllers
             return business.GetPopulationIndicator();
         }
 
+        [HttpGet]
+        [Route("api/Cities/Test")]
+        public string Test()
+        {
+            return "Hello World !";
+        }
+
         #endregion
 
     }

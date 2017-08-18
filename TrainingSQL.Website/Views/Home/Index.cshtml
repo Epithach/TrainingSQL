@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Training SQL</h1>
+    <p class="lead">Here is a website to learn to use SQL and Tasks</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+</div>
+
+<div class="row">
+    <h1>Check our Datas !</h1>
+    <div class="col-md-4">
+        <h2>Countries</h2>
+        <p>So many Coutry !</p>
+        @using (Html.BeginForm("Index", "Country", new { ReturnUrl = "" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        <!-- your textbox here-->
+            <input id="Login" type="submit" value="submit">
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Cities</h2>
+        <p>You can't handle this city list !</p>
+        @using (Html.BeginForm("Index", "City", new { ReturnUrl = "" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        <!-- your textbox here-->
+            <input id="Login" type="submit" value="submit">
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Country Languages</h2>
+        <p>Check where a language is used !</p>
+        @using (Html.BeginForm("Index", "CountryLanguage", new { ReturnUrl = "" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        <!-- your textbox here-->
+            <input id="Login" type="submit" value="submit">
+        }
+    </div>
+</div>

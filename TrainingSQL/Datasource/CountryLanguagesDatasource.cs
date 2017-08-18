@@ -45,12 +45,14 @@ namespace TrainingSQL.Datasource
                     command.Parameters.AddWithValue("@language", language);
                     var official = isOfficial == true ? "T" : "F"; 
                     command.Parameters.AddWithValue("@isOfficial", official);
-                    var response = command.ExecuteReader();
-                    while (response.Read())
+                    using (var response = command.ExecuteReader())
                     {
-                        list.Add(((string)response["Name"]).Trim());
+                        while (response.Read())
+                        {
+                            list.Add(((string)response["Name"]).Trim());
+                        }
+                        //response.Close();
                     }
-                    response.Close();
                     return list;
                 }
             }
